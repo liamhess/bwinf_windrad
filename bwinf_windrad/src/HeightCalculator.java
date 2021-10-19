@@ -1,11 +1,12 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 
 public class HeightCalculator {
     
-    public static String heightCalculator(String landkreis) throws FileNotFoundException {
+    public static String heightCalculator(String landkreis) throws FileNotFoundException, IOException {
         
         // fileReader aufrufen und input-Beispiele in Array einlesen lassen
 		String[] landkreisArray = fileReader(landkreis);
@@ -55,7 +56,7 @@ public class HeightCalculator {
 
 	}
 
-    public static String[] fileReader(String landkreis) throws FileNotFoundException {
+    public static String[] fileReader(String landkreis) throws FileNotFoundException, IOException {
         // file mit Beispielen einlesen
 		File file = new File("bwinf_windrad/resources/" + landkreis + ".txt");
 		Scanner scan = new Scanner(file);
